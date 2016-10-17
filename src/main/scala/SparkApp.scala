@@ -109,17 +109,17 @@ object SparkApp extends App {
   )
 
   val predictions2 = test map { point =>
-    val prediction = model.predict(point.features)
+    val prediction = model2.predict(point.features)
     (point.label, prediction)
   }
 
-  val wrong2 = predictions filter {
+  val wrong2 = predictions2 filter {
     case (label, prediction) => label != prediction
   }
 
-  val accuracy2 = 1 - (wrong.count.toDouble / test.count)
+  val accuracy2 = 1 - (wrong2.count.toDouble / test.count)
 
-  println(s"accuracy model2: " + accuracy)
+  println(s"accuracy model2: " + accuracy2)
 
   sc.stop()
 
