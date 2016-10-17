@@ -5,11 +5,11 @@ import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
-  * Created by markmo on 10/01/2016.
+  * Created by markmo on 18/10/2016.
   */
 object SparkApp extends App {
 
-  val conf = new SparkConf().setAppName("sparktemplate").setMaster("local[4]")
+  val conf = new SparkConf().setAppName("sparkml-flight-delay").setMaster("local[4]")
   val sc = new SparkContext(conf)
   val sqlContext = new SQLContext(sc)
 
